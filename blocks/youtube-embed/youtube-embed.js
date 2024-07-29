@@ -4,7 +4,7 @@ export default function youtubevideo(block) {
 
   const url = urlElement.textContent.trim();
 
-  const videoIdmatch = url.match(/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+  const videoIdmatch = url.match(/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
   if (!videoIdmatch || !videoIdmatch[1]) return;
 
   const videoId = videoIdmatch[1];
