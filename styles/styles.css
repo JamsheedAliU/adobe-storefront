@@ -69,6 +69,7 @@
   --shape-border-width-2: 1.5px;
   --shape-border-width-3: 2px;
   --shape-border-width-4: 4px;
+  --shape-border-radius-button: 5px;
   --shape-shadow-1: 0 0 16px 0 rgb(0 0 0 / 16%);
   --shape-shadow-2: 0 2px 16px 0 rgb(0 0 0 / 16%);
   --shape-shadow-3: 0 2px 3px 0 rgb(0 0 0 / 16%);
@@ -148,6 +149,12 @@
   --background-color: var(--color-neutral-50);
   --nav-height: 6.4rem;
 }
+ /* Theme tokens */
+:root,
+.dropin-design {
+  --shape-border-radius-3: 5px;
+}
+ /* Theme tokens end */
 
 @font-face {
   font-family: roboto-fallback;
@@ -286,7 +293,7 @@ button.button > u {
 
 /* buttons */
 main a.button:any-link,
-button.button {
+button.button{
   font: var(--type-button-2-font);
   letter-spacing: var(--type-button-2-letter-spacing);
   display: inline-block;
