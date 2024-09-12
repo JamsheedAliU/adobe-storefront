@@ -1,5 +1,9 @@
 import { activeComponentType } from './authCombine.types';
+<<<<<<< HEAD
 import { inLineAlertInterface } from './notification.types';
+=======
+import { InLineAlertInterface } from './notification.types';
+>>>>>>> template/main
 import { AddressFormProps } from './api/createCustomerAddress.types';
 import { SlotProps } from '@dropins/tools/types/elsie/src/lib';
 
@@ -43,7 +47,11 @@ export interface UseSingUpFormProps extends Omit<SignUpFormProps, 'formSize' | '
         minLength: number;
         requiredCharacterClasses: number;
     } | null;
+<<<<<<< HEAD
     handleSetInLineAlertProps: (value?: inLineAlertInterface) => void;
+=======
+    handleSetInLineAlertProps: (value?: InLineAlertInterface) => void;
+>>>>>>> template/main
     isEmailConfirmationRequired?: boolean;
     translations: Record<string, string>;
 }

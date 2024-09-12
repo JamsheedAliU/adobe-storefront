@@ -2,13 +2,29 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { events } from '@dropins/tools/event-bus.js';
 import { initializers } from '@dropins/tools/initializer.js';
+<<<<<<< HEAD
+=======
+import {
+  InLineAlert,
+  Icon,
+  provider as UI,
+} from '@dropins/tools/components.js';
+>>>>>>> template/main
 import * as productApi from '@dropins/storefront-pdp/api.js';
 import { render as productRenderer } from '@dropins/storefront-pdp/render.js';
 import { addProductsToCart } from '@dropins/storefront-cart/api.js';
 import ProductDetails from '@dropins/storefront-pdp/containers/ProductDetails.js';
 
 // Libs
+<<<<<<< HEAD
 import { getProduct, getSkuFromUrl, setJsonLd } from '../../scripts/commerce.js';
+=======
+import {
+  getProduct,
+  getSkuFromUrl,
+  setJsonLd,
+} from '../../scripts/commerce.js';
+>>>>>>> template/main
 import { getConfigValue } from '../../scripts/configs.js';
 import { fetchPlaceholders } from '../../scripts/aem.js';
 
@@ -28,11 +44,24 @@ async function errorGettingProduct(code = 404) {
 
 async function setJsonLdProduct(product) {
   const {
+<<<<<<< HEAD
     name, inStock, description, sku, urlKey, price, priceRange, images, attributes,
+=======
+    name,
+    inStock,
+    description,
+    sku,
+    urlKey,
+    price,
+    priceRange,
+    images,
+    attributes,
+>>>>>>> template/main
   } = product;
   const amount = priceRange?.minimum?.final?.amount || price?.final?.amount;
   const brand = attributes.find((attr) => attr.name === 'brand');
 
+<<<<<<< HEAD
   setJsonLd({
     '@context': 'http://schema.org',
     '@type': 'Product',
@@ -54,6 +83,39 @@ async function setJsonLdProduct(product) {
     sku,
     '@id': new URL(`/products/${urlKey}/${sku.toLowerCase()}`, window.location),
   }, 'product');
+=======
+  setJsonLd(
+    {
+      '@context': 'http://schema.org',
+      '@type': 'Product',
+      name,
+      description,
+      image: images[0]?.url,
+      offers: [
+        {
+          '@type': 'http://schema.org/Offer',
+          price: amount?.value,
+          priceCurrency: amount?.currency,
+          availability: inStock
+            ? 'http://schema.org/InStock'
+            : 'http://schema.org/OutOfStock',
+        },
+      ],
+      productID: sku,
+      brand: {
+        '@type': 'Brand',
+        name: brand?.value,
+      },
+      url: new URL(`/products/${urlKey}/${sku.toLowerCase()}`, window.location),
+      sku,
+      '@id': new URL(
+        `/products/${urlKey}/${sku.toLowerCase()}`,
+        window.location,
+      ),
+    },
+    'product',
+  );
+>>>>>>> template/main
 }
 
 function createMetaTag(property, content, type) {
@@ -85,7 +147,12 @@ function setMetaTags(product) {
   }
 
   const price = product.priceRange
+<<<<<<< HEAD
     ? product.priceRange.minimum.final.amount : product.price.final.amount;
+=======
+    ? product.priceRange.minimum.final.amount
+    : product.price.final.amount;
+>>>>>>> template/main
 
   createMetaTag('title', product.metaTitle, 'name');
   createMetaTag('description', product.metaDescription, 'name');
@@ -113,7 +180,13 @@ export default async function decorate(block) {
   }
 
   const [product, placeholders] = await Promise.all([
+<<<<<<< HEAD
     window.getProductPromise, fetchPlaceholders()]);
+=======
+    window.getProductPromise,
+    fetchPlaceholders(),
+  ]);
+>>>>>>> template/main
 
   if (!product) {
     await errorGettingProduct();
@@ -185,6 +258,7 @@ export default async function decorate(block) {
     'x-api-key': await getConfigValue('commerce-x-api-key'),
   });
 
+<<<<<<< HEAD
   events.on('eds/lcp', () => {
     if (!product) {
       return;
@@ -254,4 +328,95 @@ export default async function decorate(block) {
       }
     }, 0);
   });
+=======
+  events.on(
+    'eds/lcp',
+    () => {
+      if (!product) {
+        return;
+      }
+
+      setJsonLdProduct(product);
+      setMetaTags(product);
+      document.title = product.name;
+    },
+    { eager: true },
+  );
+
+  // Alert Message Wrapper
+  const alertWrapper = document.createElement('div');
+  alertWrapper.classList.add('product-details__alert');
+  block.appendChild(alertWrapper);
+  let inlineAlert;
+
+  // PDP Wrapper
+  const pdpWrapper = document.createElement('div');
+  block.appendChild(pdpWrapper);
+
+  // Render Containers
+  try {
+    return await productRenderer.render(ProductDetails, {
+      sku: getSkuFromUrl(),
+      carousel: {
+        controls: 'thumbnailsColumn',
+        arrowsOnMainImage: true,
+        mobile: true,
+        peak: {
+          mobile: true,
+          desktop: false,
+        },
+        gap: 'small',
+      },
+      slots: {
+        Actions: (ctx) => {
+          // Add to Cart Button
+          ctx.appendButton((next, state) => {
+            const adding = state.get('adding');
+
+            return {
+              text: adding
+                ? next.dictionary.Custom.AddingToCart?.label
+                : next.dictionary.PDP.Product.AddToCart?.label,
+              icon: 'Cart',
+              variant: 'primary',
+              disabled: adding || !next.data.inStock || !next.valid,
+              onClick: async () => {
+                try {
+                  state.set('adding', true);
+
+                  await addProductsToCart([{ ...next.values }]);
+                  // reset any previous alerts if successful
+                  inlineAlert?.remove();
+                } catch (error) {
+                  // add alert message
+                  inlineAlert = await UI.render(InLineAlert, {
+                    heading: 'Error',
+                    description: error.message,
+                    icon: Icon({ source: 'Warning' }),
+                    'aria-live': 'assertive',
+                    role: 'alert',
+                    onDismiss: () => {
+                      inlineAlert.remove();
+                    },
+                  })(alertWrapper);
+                  // Scroll the alertWrapper into view
+                  alertWrapper.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center',
+                  });
+                } finally {
+                  state.set('adding', false);
+                }
+              },
+            };
+          });
+        },
+      },
+      useACDL: true,
+    })(pdpWrapper);
+  } catch (e) {
+    console.error(e);
+    return errorGettingProduct();
+  }
+>>>>>>> template/main
 }

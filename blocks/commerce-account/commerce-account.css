@@ -2,10 +2,13 @@
   box-sizing: border-box;
 }
 
+<<<<<<< HEAD
 .my-account-element {
   overflow: hidden;
 }
 
+=======
+>>>>>>> template/main
 .admin-panel {
   display: flex;
   align-items: flex-start;

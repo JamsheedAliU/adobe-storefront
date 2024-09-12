@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+/* eslint-disable import/no-cycle */
+>>>>>>> template/main
 /*
  * Fragment Block
  * Include content on a page as a fragment.

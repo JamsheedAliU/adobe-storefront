@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 import { UseUpdatePasswordFormProps } from '../../types';
 
 export declare const useUpdatePasswordForm: ({ isEmailConfirmationRequired, signInOnSuccess, passwordConfigs, routeRedirectOnSignIn, routeWrongUrlRedirect, onErrorCallback, onSuccessCallback, handleSetInLineAlertProps, routeRedirectOnPasswordUpdate, }: UseUpdatePasswordFormProps) => {
+=======
+import { AdditionalActionsAlertProps, UseUpdatePasswordFormProps } from '../../types';
+
+export declare const useUpdatePasswordForm: ({ isEmailConfirmationRequired, signInOnSuccess, passwordConfigs, routeRedirectOnSignIn, routeWrongUrlRedirect, onErrorCallback, onSuccessCallback, handleSetInLineAlertProps, routeRedirectOnPasswordUpdate, routeSignInPage, }: UseUpdatePasswordFormProps) => {
+    additionalActionsAlert: AdditionalActionsAlertProps;
+    passwordError: boolean;
+>>>>>>> template/main
     isSuccessful: {
         userName: string;
         status: boolean;

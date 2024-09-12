@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { FetchQueryError } from '@adobe/fetch-graphql';
+=======
+import { FetchQueryError } from '../fetch-graphql';
+>>>>>>> template/main
 
 export declare class FetchError extends Error {
     constructor(reasons: FetchQueryError);

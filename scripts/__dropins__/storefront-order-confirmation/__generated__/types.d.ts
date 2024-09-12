@@ -720,6 +720,11 @@ export type BundleCartItem = CartItemInterface & {
     id: Scalars['String']['output'];
     /** True if requested quantity is less than available stock, false otherwise. */
     is_available: Scalars['Boolean']['output'];
+<<<<<<< HEAD
+=======
+    /** Message to display when the product is not available with this selected option. */
+    not_available_message?: Maybe<Scalars['String']['output']>;
+>>>>>>> template/main
     /** Contains details about the price of the item, including taxes and discounts. */
     prices?: Maybe<CartItemPrices>;
     /** Details about an item in the cart. */
@@ -1381,6 +1386,11 @@ export type CartItemInterface = {
     id: Scalars['String']['output'];
     /** True if requested quantity is less than available stock, false otherwise. */
     is_available: Scalars['Boolean']['output'];
+<<<<<<< HEAD
+=======
+    /** Message to display when the product is not available with this selected option. */
+    not_available_message?: Maybe<Scalars['String']['output']>;
+>>>>>>> template/main
     /** Contains details about the price of the item, including taxes and discounts. */
     prices?: Maybe<CartItemPrices>;
     /** Details about an item in the cart. */
@@ -1934,6 +1944,11 @@ export type ConfigurableCartItem = CartItemInterface & {
     id: Scalars['String']['output'];
     /** True if requested quantity is less than available stock, false otherwise. */
     is_available: Scalars['Boolean']['output'];
+<<<<<<< HEAD
+=======
+    /** Message to display when the product is not available with this selected option. */
+    not_available_message?: Maybe<Scalars['String']['output']>;
+>>>>>>> template/main
     /** Contains details about the price of the item, including taxes and discounts. */
     prices?: Maybe<CartItemPrices>;
     /** Details about an item in the cart. */
@@ -4179,6 +4194,11 @@ export type DownloadableCartItem = CartItemInterface & {
     is_available: Scalars['Boolean']['output'];
     /** An array containing information about the links for the downloadable product added to the cart. */
     links?: Maybe<Array<Maybe<DownloadableProductLinks>>>;
+<<<<<<< HEAD
+=======
+    /** Message to display when the product is not available with this selected option. */
+    not_available_message?: Maybe<Scalars['String']['output']>;
+>>>>>>> template/main
     /** Contains details about the price of the item, including taxes and discounts. */
     prices?: Maybe<CartItemPrices>;
     /** Details about an item in the cart. */
@@ -4869,6 +4889,11 @@ export type GiftCardCartItem = CartItemInterface & {
     is_available: Scalars['Boolean']['output'];
     /** The message from the sender to the recipient. */
     message?: Maybe<Scalars['String']['output']>;
+<<<<<<< HEAD
+=======
+    /** Message to display when the product is not available with this selected option. */
+    not_available_message?: Maybe<Scalars['String']['output']>;
+>>>>>>> template/main
     /** Contains details about the price of the item, including taxes and discounts. */
     prices?: Maybe<CartItemPrices>;
     /** Details about an item in the cart. */
@@ -6924,6 +6949,11 @@ export type OrderAddress = {
     company?: Maybe<Scalars['String']['output']>;
     /** The customer's country. */
     country_code?: Maybe<CountryCodeEnum>;
+<<<<<<< HEAD
+=======
+    /** Custom attributes assigned to the customer address. */
+    custom_attributesV2: Array<Maybe<AttributeValueInterface>>;
+>>>>>>> template/main
     /** The fax number. */
     fax?: Maybe<Scalars['String']['output']>;
     /** The first name of the person associated with the shipping/billing address. */
@@ -6949,6 +6979,13 @@ export type OrderAddress = {
     /** The customer's Value-added tax (VAT) number (for corporate customers). */
     vat_id?: Maybe<Scalars['String']['output']>;
 };
+<<<<<<< HEAD
+=======
+/** Contains detailed information about an order's billing and shipping addresses. */
+export type OrderAddressCustom_AttributesV2Args = {
+    attributeCodes?: InputMaybe<Array<Scalars['ID']['input']>>;
+};
+>>>>>>> template/main
 /** Input to retrieve an order based on details. */
 export type OrderInformationInput = {
     /** Order billing address email. */
@@ -9852,6 +9889,11 @@ export type SimpleCartItem = CartItemInterface & {
     id: Scalars['String']['output'];
     /** True if requested quantity is less than available stock, false otherwise. */
     is_available: Scalars['Boolean']['output'];
+<<<<<<< HEAD
+=======
+    /** Message to display when the product is not available with this selected option. */
+    not_available_message?: Maybe<Scalars['String']['output']>;
+>>>>>>> template/main
     /** Contains details about the price of the item, including taxes and discounts. */
     prices?: Maybe<CartItemPrices>;
     /** Details about an item in the cart. */
@@ -10898,6 +10940,11 @@ export type VirtualCartItem = CartItemInterface & {
     id: Scalars['String']['output'];
     /** True if requested quantity is less than available stock, false otherwise. */
     is_available: Scalars['Boolean']['output'];
+<<<<<<< HEAD
+=======
+    /** Message to display when the product is not available with this selected option. */
+    not_available_message?: Maybe<Scalars['String']['output']>;
+>>>>>>> template/main
     /** Contains details about the price of the item, including taxes and discounts. */
     prices?: Maybe<CartItemPrices>;
     /** Details about an item in the cart. */
@@ -13229,6 +13276,17 @@ export type CustomerOrderQuery = {
                     region?: string | null;
                     region_id?: string | null;
                     company?: string | null;
+<<<<<<< HEAD
+=======
+                    custom_attributesV2: Array<{
+                        __typename?: 'AttributeSelectedOptions';
+                        code: string;
+                    } | {
+                        __typename?: 'AttributeValue';
+                        value: string;
+                        code: string;
+                    } | null>;
+>>>>>>> template/main
                 } | null;
                 shipping_address?: {
                     __typename?: 'OrderAddress';
@@ -13243,11 +13301,31 @@ export type CustomerOrderQuery = {
                     region?: string | null;
                     region_id?: string | null;
                     company?: string | null;
+<<<<<<< HEAD
+=======
+                    custom_attributesV2: Array<{
+                        __typename?: 'AttributeSelectedOptions';
+                        code: string;
+                    } | {
+                        __typename?: 'AttributeValue';
+                        value: string;
+                        code: string;
+                    } | null>;
+>>>>>>> template/main
                 } | null;
                 items?: Array<{
                     __typename: 'BundleOrderItem';
                     id: string;
+<<<<<<< HEAD
                     quantity_ordered?: number | null;
+=======
+                    quantity_canceled?: number | null;
+                    quantity_invoiced?: number | null;
+                    quantity_ordered?: number | null;
+                    quantity_refunded?: number | null;
+                    quantity_returned?: number | null;
+                    quantity_shipped?: number | null;
+>>>>>>> template/main
                     product_sale_price: {
                         __typename?: 'Money';
                         value?: number | null;
@@ -13402,7 +13480,16 @@ export type CustomerOrderQuery = {
                 } | {
                     __typename: 'DownloadableOrderItem';
                     id: string;
+<<<<<<< HEAD
                     quantity_ordered?: number | null;
+=======
+                    quantity_canceled?: number | null;
+                    quantity_invoiced?: number | null;
+                    quantity_ordered?: number | null;
+                    quantity_refunded?: number | null;
+                    quantity_returned?: number | null;
+                    quantity_shipped?: number | null;
+>>>>>>> template/main
                     product_sale_price: {
                         __typename?: 'Money';
                         value?: number | null;
@@ -13557,7 +13644,16 @@ export type CustomerOrderQuery = {
                 } | {
                     __typename: 'GiftCardOrderItem';
                     id: string;
+<<<<<<< HEAD
                     quantity_ordered?: number | null;
+=======
+                    quantity_canceled?: number | null;
+                    quantity_invoiced?: number | null;
+                    quantity_ordered?: number | null;
+                    quantity_refunded?: number | null;
+                    quantity_returned?: number | null;
+                    quantity_shipped?: number | null;
+>>>>>>> template/main
                     gift_card?: {
                         __typename?: 'GiftCardItem';
                         recipient_name?: string | null;
@@ -13720,7 +13816,16 @@ export type CustomerOrderQuery = {
                 } | {
                     __typename: 'OrderItem';
                     id: string;
+<<<<<<< HEAD
                     quantity_ordered?: number | null;
+=======
+                    quantity_canceled?: number | null;
+                    quantity_invoiced?: number | null;
+                    quantity_ordered?: number | null;
+                    quantity_refunded?: number | null;
+                    quantity_returned?: number | null;
+                    quantity_shipped?: number | null;
+>>>>>>> template/main
                     product_sale_price: {
                         __typename?: 'Money';
                         value?: number | null;
@@ -13925,6 +14030,17 @@ export type GuestOrderDataFragment = {
         region?: string | null;
         region_id?: string | null;
         company?: string | null;
+<<<<<<< HEAD
+=======
+        custom_attributesV2: Array<{
+            __typename?: 'AttributeSelectedOptions';
+            code: string;
+        } | {
+            __typename?: 'AttributeValue';
+            value: string;
+            code: string;
+        } | null>;
+>>>>>>> template/main
     } | null;
     shipping_address?: {
         __typename?: 'OrderAddress';
@@ -13939,11 +14055,31 @@ export type GuestOrderDataFragment = {
         region?: string | null;
         region_id?: string | null;
         company?: string | null;
+<<<<<<< HEAD
+=======
+        custom_attributesV2: Array<{
+            __typename?: 'AttributeSelectedOptions';
+            code: string;
+        } | {
+            __typename?: 'AttributeValue';
+            value: string;
+            code: string;
+        } | null>;
+>>>>>>> template/main
     } | null;
     items?: Array<{
         __typename: 'BundleOrderItem';
         id: string;
+<<<<<<< HEAD
         quantity_ordered?: number | null;
+=======
+        quantity_canceled?: number | null;
+        quantity_invoiced?: number | null;
+        quantity_ordered?: number | null;
+        quantity_refunded?: number | null;
+        quantity_returned?: number | null;
+        quantity_shipped?: number | null;
+>>>>>>> template/main
         product_sale_price: {
             __typename?: 'Money';
             value?: number | null;
@@ -14098,7 +14234,16 @@ export type GuestOrderDataFragment = {
     } | {
         __typename: 'DownloadableOrderItem';
         id: string;
+<<<<<<< HEAD
         quantity_ordered?: number | null;
+=======
+        quantity_canceled?: number | null;
+        quantity_invoiced?: number | null;
+        quantity_ordered?: number | null;
+        quantity_refunded?: number | null;
+        quantity_returned?: number | null;
+        quantity_shipped?: number | null;
+>>>>>>> template/main
         product_sale_price: {
             __typename?: 'Money';
             value?: number | null;
@@ -14253,7 +14398,16 @@ export type GuestOrderDataFragment = {
     } | {
         __typename: 'GiftCardOrderItem';
         id: string;
+<<<<<<< HEAD
         quantity_ordered?: number | null;
+=======
+        quantity_canceled?: number | null;
+        quantity_invoiced?: number | null;
+        quantity_ordered?: number | null;
+        quantity_refunded?: number | null;
+        quantity_returned?: number | null;
+        quantity_shipped?: number | null;
+>>>>>>> template/main
         gift_card?: {
             __typename?: 'GiftCardItem';
             recipient_name?: string | null;
@@ -14416,7 +14570,16 @@ export type GuestOrderDataFragment = {
     } | {
         __typename: 'OrderItem';
         id: string;
+<<<<<<< HEAD
         quantity_ordered?: number | null;
+=======
+        quantity_canceled?: number | null;
+        quantity_invoiced?: number | null;
+        quantity_ordered?: number | null;
+        quantity_refunded?: number | null;
+        quantity_returned?: number | null;
+        quantity_shipped?: number | null;
+>>>>>>> template/main
         product_sale_price: {
             __typename?: 'Money';
             value?: number | null;
@@ -14625,6 +14788,17 @@ export type GuestOrderQuery = {
             region?: string | null;
             region_id?: string | null;
             company?: string | null;
+<<<<<<< HEAD
+=======
+            custom_attributesV2: Array<{
+                __typename?: 'AttributeSelectedOptions';
+                code: string;
+            } | {
+                __typename?: 'AttributeValue';
+                value: string;
+                code: string;
+            } | null>;
+>>>>>>> template/main
         } | null;
         shipping_address?: {
             __typename?: 'OrderAddress';
@@ -14639,11 +14813,31 @@ export type GuestOrderQuery = {
             region?: string | null;
             region_id?: string | null;
             company?: string | null;
+<<<<<<< HEAD
+=======
+            custom_attributesV2: Array<{
+                __typename?: 'AttributeSelectedOptions';
+                code: string;
+            } | {
+                __typename?: 'AttributeValue';
+                value: string;
+                code: string;
+            } | null>;
+>>>>>>> template/main
         } | null;
         items?: Array<{
             __typename: 'BundleOrderItem';
             id: string;
+<<<<<<< HEAD
             quantity_ordered?: number | null;
+=======
+            quantity_canceled?: number | null;
+            quantity_invoiced?: number | null;
+            quantity_ordered?: number | null;
+            quantity_refunded?: number | null;
+            quantity_returned?: number | null;
+            quantity_shipped?: number | null;
+>>>>>>> template/main
             product_sale_price: {
                 __typename?: 'Money';
                 value?: number | null;
@@ -14798,7 +14992,16 @@ export type GuestOrderQuery = {
         } | {
             __typename: 'DownloadableOrderItem';
             id: string;
+<<<<<<< HEAD
             quantity_ordered?: number | null;
+=======
+            quantity_canceled?: number | null;
+            quantity_invoiced?: number | null;
+            quantity_ordered?: number | null;
+            quantity_refunded?: number | null;
+            quantity_returned?: number | null;
+            quantity_shipped?: number | null;
+>>>>>>> template/main
             product_sale_price: {
                 __typename?: 'Money';
                 value?: number | null;
@@ -14953,7 +15156,16 @@ export type GuestOrderQuery = {
         } | {
             __typename: 'GiftCardOrderItem';
             id: string;
+<<<<<<< HEAD
             quantity_ordered?: number | null;
+=======
+            quantity_canceled?: number | null;
+            quantity_invoiced?: number | null;
+            quantity_ordered?: number | null;
+            quantity_refunded?: number | null;
+            quantity_returned?: number | null;
+            quantity_shipped?: number | null;
+>>>>>>> template/main
             gift_card?: {
                 __typename?: 'GiftCardItem';
                 recipient_name?: string | null;
@@ -15116,7 +15328,16 @@ export type GuestOrderQuery = {
         } | {
             __typename: 'OrderItem';
             id: string;
+<<<<<<< HEAD
             quantity_ordered?: number | null;
+=======
+            quantity_canceled?: number | null;
+            quantity_invoiced?: number | null;
+            quantity_ordered?: number | null;
+            quantity_refunded?: number | null;
+            quantity_returned?: number | null;
+            quantity_shipped?: number | null;
+>>>>>>> template/main
             product_sale_price: {
                 __typename?: 'Money';
                 value?: number | null;
@@ -15324,6 +15545,17 @@ export type GuestOrderByTokenQuery = {
             region?: string | null;
             region_id?: string | null;
             company?: string | null;
+<<<<<<< HEAD
+=======
+            custom_attributesV2: Array<{
+                __typename?: 'AttributeSelectedOptions';
+                code: string;
+            } | {
+                __typename?: 'AttributeValue';
+                value: string;
+                code: string;
+            } | null>;
+>>>>>>> template/main
         } | null;
         shipping_address?: {
             __typename?: 'OrderAddress';
@@ -15338,11 +15570,31 @@ export type GuestOrderByTokenQuery = {
             region?: string | null;
             region_id?: string | null;
             company?: string | null;
+<<<<<<< HEAD
+=======
+            custom_attributesV2: Array<{
+                __typename?: 'AttributeSelectedOptions';
+                code: string;
+            } | {
+                __typename?: 'AttributeValue';
+                value: string;
+                code: string;
+            } | null>;
+>>>>>>> template/main
         } | null;
         items?: Array<{
             __typename: 'BundleOrderItem';
             id: string;
+<<<<<<< HEAD
             quantity_ordered?: number | null;
+=======
+            quantity_canceled?: number | null;
+            quantity_invoiced?: number | null;
+            quantity_ordered?: number | null;
+            quantity_refunded?: number | null;
+            quantity_returned?: number | null;
+            quantity_shipped?: number | null;
+>>>>>>> template/main
             product_sale_price: {
                 __typename?: 'Money';
                 value?: number | null;
@@ -15497,7 +15749,16 @@ export type GuestOrderByTokenQuery = {
         } | {
             __typename: 'DownloadableOrderItem';
             id: string;
+<<<<<<< HEAD
             quantity_ordered?: number | null;
+=======
+            quantity_canceled?: number | null;
+            quantity_invoiced?: number | null;
+            quantity_ordered?: number | null;
+            quantity_refunded?: number | null;
+            quantity_returned?: number | null;
+            quantity_shipped?: number | null;
+>>>>>>> template/main
             product_sale_price: {
                 __typename?: 'Money';
                 value?: number | null;
@@ -15652,7 +15913,16 @@ export type GuestOrderByTokenQuery = {
         } | {
             __typename: 'GiftCardOrderItem';
             id: string;
+<<<<<<< HEAD
             quantity_ordered?: number | null;
+=======
+            quantity_canceled?: number | null;
+            quantity_invoiced?: number | null;
+            quantity_ordered?: number | null;
+            quantity_refunded?: number | null;
+            quantity_returned?: number | null;
+            quantity_shipped?: number | null;
+>>>>>>> template/main
             gift_card?: {
                 __typename?: 'GiftCardItem';
                 recipient_name?: string | null;
@@ -15815,7 +16085,16 @@ export type GuestOrderByTokenQuery = {
         } | {
             __typename: 'OrderItem';
             id: string;
+<<<<<<< HEAD
             quantity_ordered?: number | null;
+=======
+            quantity_canceled?: number | null;
+            quantity_invoiced?: number | null;
+            quantity_ordered?: number | null;
+            quantity_refunded?: number | null;
+            quantity_returned?: number | null;
+            quantity_shipped?: number | null;
+>>>>>>> template/main
             product_sale_price: {
                 __typename?: 'Money';
                 value?: number | null;
@@ -15970,4 +16249,17 @@ export type GuestOrderByTokenQuery = {
         } | null> | null;
     };
 };
+<<<<<<< HEAD
+=======
+export type IsEmailAvailableQueryVariables = Exact<{
+    email: Scalars['String']['input'];
+}>;
+export type IsEmailAvailableQuery = {
+    __typename?: 'Query';
+    isEmailAvailable?: {
+        __typename?: 'IsEmailAvailableOutput';
+        is_email_available?: boolean | null;
+    } | null;
+};
+>>>>>>> template/main
 //# sourceMappingURL=types.d.ts.map

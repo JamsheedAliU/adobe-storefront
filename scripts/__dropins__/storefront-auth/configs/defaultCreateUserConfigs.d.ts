@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export interface SignUpFieldsProps {
     code: string;
     default_value: string;
@@ -8,6 +9,11 @@ export interface SignUpFieldsProps {
     is_unique: boolean;
     label: string;
     options: any[];
+=======
+import { getAttributesFormItems } from '../types';
+
+export interface SignUpFieldsProps extends getAttributesFormItems {
+>>>>>>> template/main
 }
 export declare const DEFAULT__SIGN_IN_EMAIL_FIELD: SignUpFieldsProps[];
 export declare const DEFAULT__RESET_PASSWORD_EMAIL_FIELD: Record<string, string | boolean | unknown>[];

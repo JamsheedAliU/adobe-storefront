@@ -17,15 +17,25 @@ import SignUp from '@dropins/storefront-auth/containers/SignUp.js';
 import { createModal } from '../modal/modal.js';
 
 export default async function decorate(block) {
+<<<<<<< HEAD
   let signUpModal = null;
+=======
+  let modal = null;
+>>>>>>> template/main
 
   // Initialize Dropins
   initializers.register(orderConfirmationApi.initialize, {});
 
   events.on('authenticated', (isAuthenticated) => {
+<<<<<<< HEAD
     if (isAuthenticated && signUpModal) {
       signUpModal.removeModal();
       signUpModal = null;
+=======
+    if (isAuthenticated && modal) {
+      modal.removeModal();
+      modal = null;
+>>>>>>> template/main
     }
   });
 
@@ -39,8 +49,13 @@ export default async function decorate(block) {
       addressesData,
     })(signUpForm);
 
+<<<<<<< HEAD
     signUpModal = await createModal([signUpForm]);
     signUpModal.showModal();
+=======
+    modal = await createModal([signUpForm]);
+    modal.showModal();
+>>>>>>> template/main
   };
 
   const params = new URLSearchParams(window.location.search);

@@ -9,4 +9,9 @@ export * from './createEmptyCart';
 export * from './getStoreConfig';
 export * from './getEstimateShipping';
 export * from './getEstimatedTotals';
+<<<<<<< HEAD
+=======
+export * from './refreshCart';
+export { getPersistedCartData as getCartDataFromCache } from '../lib/persisted-data';
+>>>>>>> template/main
 //# sourceMappingURL=index.d.ts.map

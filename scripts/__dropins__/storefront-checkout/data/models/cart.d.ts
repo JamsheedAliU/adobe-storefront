@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Item } from '.';
 import { Cart as GeneratedCart } from '../transforms/transform-cart';
 import { PaymentMethod } from './payment-method';
@@ -20,4 +21,19 @@ export type Cart = {
     virtual: boolean;
 };
 export {};
+=======
+import { PaymentMethod } from './payment-method';
+import { ShippingAddress, BillingAddress } from './address';
+
+export type Cart = {
+    availablePaymentMethods?: PaymentMethod[];
+    billingAddress?: BillingAddress;
+    email?: string;
+    id: string;
+    isEmpty: boolean;
+    isVirtual: boolean;
+    selectedPaymentMethod?: PaymentMethod;
+    shippingAddresses?: ShippingAddress[];
+};
+>>>>>>> template/main
 //# sourceMappingURL=cart.d.ts.map

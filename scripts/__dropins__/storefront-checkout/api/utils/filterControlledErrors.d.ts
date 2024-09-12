@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { FetchQueryError } from '@adobe/fetch-graphql';
+=======
+import { FetchQueryError } from '../fetch-graphql';
+>>>>>>> template/main
 
 type ErrorPath = (string | number)[];
 export type ErrorWithPath = FetchQueryError[number] & {

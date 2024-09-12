@@ -58,10 +58,22 @@ declare const _default: {
       "Close": {
         "label": "Close"
       }
+<<<<<<< HEAD
     }
   },
   "Custom": {
     "quantityLabel": "Passengers"
+=======
+    },
+    "Zoom": {
+      "Close": {
+        "label": "Close"
+      }
+    }
+  },
+  "Custom": {
+    "quantityLabel": "Quantity"
+>>>>>>> template/main
   }
 }
 ;

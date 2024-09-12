@@ -10,7 +10,10 @@ export interface LoginFormProps extends HTMLAttributes<HTMLDivElement> {
     onEmailInvalid: (e: any) => void;
     onSignInClick?: (email: string | null) => void;
     onSignOutClick?: () => void;
+<<<<<<< HEAD
     isAuthenticated: boolean;
+=======
+>>>>>>> template/main
     customer?: Customer | null;
 }
 export declare const LoginForm: FunctionComponent<LoginFormProps>;

@@ -1,1 +1,9 @@
 /* stylelint-disable no-empty-source */
+<<<<<<< HEAD
+=======
+/* stylelint-disable selector-class-pattern */
+
+.product-details__alert {
+  margin-bottom: var(--spacing-small);
+}
+>>>>>>> template/main

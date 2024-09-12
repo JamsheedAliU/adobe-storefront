@@ -73,6 +73,19 @@ declare const transformShippingAddresses: (data: ({
             value?: number | null | undefined;
             currency?: import('../../__generated__/types').CurrencyEnum | null | undefined;
         };
+<<<<<<< HEAD
+=======
+        price_excl_tax: {
+            __typename?: "Money" | undefined;
+            value?: number | null | undefined;
+            currency?: import('../../__generated__/types').CurrencyEnum | null | undefined;
+        };
+        price_incl_tax: {
+            __typename?: "Money" | undefined;
+            value?: number | null | undefined;
+            currency?: import('../../__generated__/types').CurrencyEnum | null | undefined;
+        };
+>>>>>>> template/main
     } | null | undefined;
 } | null)[]) => ShippingAddressModel[] | undefined;
 export { ShippingAddress, BillingAddress, transformBillingAddress, transformShippingAddresses, };

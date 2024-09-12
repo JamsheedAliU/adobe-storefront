@@ -1,6 +1,10 @@
 import { SlotProps } from '@dropins/tools/types/elsie/src/lib';
 import { activeComponentType } from './authCombine.types';
+<<<<<<< HEAD
 import { inLineAlertInterface } from './notification.types';
+=======
+import { InLineAlertInterface } from './notification.types';
+>>>>>>> template/main
 
 type DefaultSlotContext = {
     isSuccessful: {
@@ -12,6 +16,10 @@ export interface SignInProps {
     slots?: {
         SuccessNotification?: SlotProps<DefaultSlotContext>;
     };
+<<<<<<< HEAD
+=======
+    labels?: Record<string, string>;
+>>>>>>> template/main
     formSize?: 'default' | 'small';
     renderSignUpLink?: boolean;
     initialEmailValue?: string;
@@ -32,7 +40,11 @@ export interface SignInFormProps extends SignInProps {
     setActiveComponent?: (componentName: activeComponentType) => void;
 }
 export interface useSignInFormProps extends Omit<SignInFormProps, 'formSize' | 'slots'> {
+<<<<<<< HEAD
     handleSetInLineAlertProps: (value?: inLineAlertInterface) => void;
+=======
+    handleSetInLineAlertProps: (value?: InLineAlertInterface) => void;
+>>>>>>> template/main
     emailConfirmationStatusMessage?: {
         text: string;
         status: '' | 'success' | 'error';

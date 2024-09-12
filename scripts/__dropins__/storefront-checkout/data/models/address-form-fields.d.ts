@@ -1,5 +1,9 @@
 import { AttributeFrontendInputEnum, ValidationRuleEnum } from '../../__generated__/types';
+<<<<<<< HEAD
 import { PickerOption } from '@dropins/tools/types/elsie/src/src/components';
+=======
+import { PickerOption } from '@dropins/tools/types/elsie/src/components';
+>>>>>>> template/main
 
 type AddressFormFieldRule = {
     name: ValidationRuleEnum;
@@ -48,5 +52,9 @@ declare enum AddressFormFieldCode {
 }
 type AddressFormValues = Record<string, string>;
 type AddressFormErrors = Record<string, string>;
+<<<<<<< HEAD
 export { AddressFormErrors, AddressFormField, AddressFormFieldCode, AddressFormType, AddressFormValues, AddressFormElement, };
+=======
+export { AddressFormElement, AddressFormErrors, AddressFormField, AddressFormFieldCode, AddressFormType, AddressFormValues, };
+>>>>>>> template/main
 //# sourceMappingURL=address-form-fields.d.ts.map

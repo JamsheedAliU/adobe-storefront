@@ -7,7 +7,10 @@ export interface ShippingEstimationCriteria {
     zip?: string;
 }
 export type EstimateShippingInput = {
+<<<<<<< HEAD
     cartId: string;
+=======
+>>>>>>> template/main
     criteria: ShippingEstimationCriteria;
 };
 export declare const estimateShippingMethods: (input: EstimateShippingInput) => Promise<ShippingMethod[] | undefined>;
