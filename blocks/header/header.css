@@ -392,15 +392,36 @@ header .nav-search-input .search_autocomplete .popover-container {
   display: flex;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
   z-index: 5;
+=======
+  z-index: 10;
+  overflow-y: auto;
+  padding: 10px 0;
+  box-sizing: border-box;
+>>>>>>> template/main
 }
 
 #auth-combine-wrapper {
   background-color: white;
   border-radius: var(--shape-border-radius-2);
+<<<<<<< HEAD
   width: 800px;
   min-height: max-content;
   margin: 0 10px;
+=======
+  width: 100%;
+  max-width: 800px;
+  min-height: max-content;
+  margin: 0 10px;
+  box-sizing: border-box;
+  max-height: 90vh;
+  overflow-y: auto;
+
+  @supports (height: 90svh) {
+    max-height: 90svh;
+  }
+>>>>>>> template/main
 }
 
 /* TODO - CSS for auth dropdown demo (Auth Drop-In) */
@@ -485,4 +506,8 @@ header .nav-search-input .search_autocomplete .popover-container {
 
 .grecaptcha-badge {
   margin-top: 20px;
+<<<<<<< HEAD
+=======
+  z-index: 3;
+>>>>>>> template/main
 }

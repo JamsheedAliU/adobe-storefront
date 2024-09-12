@@ -69,7 +69,10 @@
   --shape-border-width-2: 1.5px;
   --shape-border-width-3: 2px;
   --shape-border-width-4: 4px;
+<<<<<<< HEAD
   --shape-border-radius-button: 5px;
+=======
+>>>>>>> template/main
   --shape-shadow-1: 0 0 16px 0 rgb(0 0 0 / 16%);
   --shape-shadow-2: 0 2px 16px 0 rgb(0 0 0 / 16%);
   --shape-shadow-3: 0 2px 3px 0 rgb(0 0 0 / 16%);
@@ -150,6 +153,7 @@
   --nav-height: 6.4rem;
 }
 
+<<<<<<< HEAD
  /* Theme tokens */
 :root,
 .dropin-design {
@@ -157,6 +161,8 @@
 }
 
  /* Theme tokens end */
+=======
+>>>>>>> template/main
 @font-face {
   font-family: roboto-fallback;
   size-adjust: 100.06%;
@@ -188,9 +194,24 @@ body:not(.appear) {
 }
 
 header {
+<<<<<<< HEAD
   height: var(--nav-height);
 }
 
+=======
+  grid-row: 1;
+  height: var(--nav-height);
+}
+
+main {
+  grid-row: 2;
+}
+
+footer {
+  grid-row: 3;
+}
+
+>>>>>>> template/main
 h1 {
   font: var(--type-display-1-font);
   letter-spacing: var(--type-display-1-letter-spacing);
@@ -294,7 +315,11 @@ button.button > u {
 
 /* buttons */
 main a.button:any-link,
+<<<<<<< HEAD
 button.button{
+=======
+button.button {
+>>>>>>> template/main
   font: var(--type-button-2-font);
   letter-spacing: var(--type-button-2-letter-spacing);
   display: inline-block;
@@ -337,7 +362,11 @@ button.button.secondary {
 
 main a.button.secondary:hover,
 button.button.secondary:hover {
+<<<<<<< HEAD
   color: var(--color-brand-600)
+=======
+  color: var(--color-brand-600);
+>>>>>>> template/main
 }
 
 main input:hover {
@@ -406,3 +435,68 @@ main .section.highlight {
 .dropin-design.dropin-design {
   --background-none: none 0 0% no-repeat padding-box;
 }
+<<<<<<< HEAD
+=======
+
+.dropin-input-date__icon {
+  z-index: 2;
+}
+
+/* Layout: Columns */
+body.columns main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1264px;
+  margin: 0 auto;
+  padding: var(--spacing-large) var(--spacing-small);
+  box-sizing: border-box;
+  gap: var(--grid-4-gutters);
+}
+
+body.columns main > .section {
+  flex: 1;
+  flex-basis: 100%;
+  max-width: unset;
+  margin: unset;
+  padding: unset;
+}
+
+body.columns main > .section > div {
+  max-width: unset;
+  padding: unset;
+}
+
+body.columns main > .section > div:not(:last-child) {
+  margin-bottom: var(--gap, unset);
+}
+
+body.columns main > .section:empty {
+  display: none;
+}
+
+@media (width >= 600px) {
+  body.columns main {
+      padding: var(--spacing-large) var(--spacing-big);
+  }
+}
+
+@media (width >= 900px) {
+  body.columns main {
+    flex-direction: row;
+  }
+
+  body.columns main > .section {
+    flex: 1;
+    flex-basis: var(--column-width, auto);
+  }
+}
+
+/**
+* Reset main element visibility
+* https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden
+*/
+main[hidden] {
+  display: none !important;
+}
+>>>>>>> template/main

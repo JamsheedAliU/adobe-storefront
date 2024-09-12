@@ -96,6 +96,19 @@ export declare const cartFixture: {
                 value?: number | null | undefined;
                 currency?: import('../../../__generated__/types').CurrencyEnum | null | undefined;
             };
+<<<<<<< HEAD
+=======
+            price_excl_tax: {
+                __typename?: "Money" | undefined;
+                value?: number | null | undefined;
+                currency?: import('../../../__generated__/types').CurrencyEnum | null | undefined;
+            };
+            price_incl_tax: {
+                __typename?: "Money" | undefined;
+                value?: number | null | undefined;
+                currency?: import('../../../__generated__/types').CurrencyEnum | null | undefined;
+            };
+>>>>>>> template/main
         } | null | undefined;
     } | null)[];
     available_payment_methods?: ({
@@ -108,6 +121,7 @@ export declare const cartFixture: {
         code: string;
         title: string;
     } | null | undefined;
+<<<<<<< HEAD
     applied_coupons?: ({
         __typename?: "AppliedCoupon" | undefined;
         code: string;
@@ -1714,5 +1728,7 @@ export declare const cartFixture: {
             } | null)[] | null | undefined;
         } | null)[];
     } | null | undefined;
+=======
+>>>>>>> template/main
 } | null | undefined;
 //# sourceMappingURL=cart.d.ts.map

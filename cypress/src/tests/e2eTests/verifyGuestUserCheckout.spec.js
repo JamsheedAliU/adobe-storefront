@@ -57,12 +57,21 @@ describe('Verify guest user can place order', () => {
             '$38.00',
             '$76.00',
             '0'
+<<<<<<< HEAD
         )('.cart-cart');
         assertTitleHasLink(
             'Crown Summit Backpack',
             '/products/crown-summit-backpack/24-MB03'
         )('.cart-cart');
         assertProductImage('/mb03-black-0.jpg')('.cart-cart');
+=======
+        )('.commerce-cart-summary-wrapper');
+        assertTitleHasLink(
+            'Crown Summit Backpack',
+            '/products/crown-summit-backpack/24-MB03'
+        )('.commerce-cart-summary-wrapper');
+        assertProductImage('/mb03-black-0.jpg')('.commerce-cart-summary-wrapper');
+>>>>>>> template/main
         cy.contains('Estimated Shipping').should('be.visible');
         cy.get('.dropin-button--primary')
             .contains('Checkout')
@@ -76,7 +85,11 @@ describe('Verify guest user can place order', () => {
             '$76.00',
             '0'
         );
+<<<<<<< HEAD
         cy.contains('Estimated shipping').should('be.visible')
+=======
+        cy.contains('Estimated Shipping').should('be.visible')
+>>>>>>> template/main
         const apiMethod = 'setGuestEmailOnCart';
         const urlTest = Cypress.env('graphqlEndPoint');
         cy.intercept('POST', urlTest, (req) => {
@@ -99,4 +112,8 @@ describe('Verify guest user can place order', () => {
         assertOrderConfirmationBillingDetails(customerShippingAddress);
         assertOrderConfirmationShippingMethod(customerShippingAddress);
     });
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> template/main

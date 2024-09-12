@@ -3,6 +3,11 @@ import { PasswordStatusIndicatorProps } from './PasswordStatusIndicator';
 import { HTMLAttributes } from 'preact/compat';
 
 export interface InputPasswordProps extends PasswordStatusIndicatorProps, Omit<HTMLAttributes<HTMLDivElement>, 'minLength'> {
+<<<<<<< HEAD
+=======
+    placeholder?: string;
+    floatingLabel?: string;
+>>>>>>> template/main
     defaultValue?: string;
     error?: boolean;
     className?: string;

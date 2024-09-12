@@ -7,7 +7,11 @@ export const assertCartSummaryProduct =
     totalPrice,
     productPosition
   ) =>
+<<<<<<< HEAD
     (elem = '.cart-cart') => {
+=======
+    (elem = '.commerce-cart-summary-wrapper') => {
+>>>>>>> template/main
       cy.get(`${elem} .dropin-cart-item__title`)
         .eq(productPosition)
         .should('contain', productName);
@@ -15,7 +19,11 @@ export const assertCartSummaryProduct =
         .eq(productPosition)
         .should('contain', productSku);
 
+<<<<<<< HEAD
       if (elem === '.cart-cart') {
+=======
+      if (elem === '.commerce-cart-summary-wrapper') {
+>>>>>>> template/main
         cy.get(`${elem} .dropin-incrementer__input`)
           .eq(productPosition)
           .should('have.value', productQty);
@@ -56,13 +64,19 @@ export const assertCartSummaryProductsOnCheckout = (
 };
 
 export const assertCartSummaryMisc = (itemCount) => {
+<<<<<<< HEAD
   cy.get('.checkout-cart-summary__title')
     .should('contain', 'Your cart')
+=======
+  cy.get('.cart-summary-list__heading-text')
+    .should('contain', 'Your Cart')
+>>>>>>> template/main
     .and('contain', itemCount);
   cy.contains('Edit').should('have.attr', 'href', '/cart');
 };
 
 export const assertOrderSummaryMisc = (subtotal, shipping, total) => {
+<<<<<<< HEAD
   cy.get('.checkout-order-summary')
     .find('.checkout-order-summary__title')
     .contains('Order summary')
@@ -77,6 +91,22 @@ export const assertOrderSummaryMisc = (subtotal, shipping, total) => {
     .and('contain', shipping);
   cy.get('.checkout-order-summary')
     .find('div[data-testid="order-summary-total-incl-tax"]')
+=======
+  cy.get('.cart-order-summary__primary')
+    .find('.cart-order-summary__heading-text')
+    .contains('Order Summary')
+    .should('be.visible');
+  cy.get('.cart-order-summary__primary')
+    .find('.cart-order-summary__subTotal')
+    .should('contain', 'Subtotal')
+    .and('contain', subtotal);
+  cy.get('.cart-order-summary__primary')
+    .find('div[data-testid="estimate-shipping"]')
+    .should('contain', 'Shipping')
+    .and('contain', shipping);
+  cy.get('.cart-order-summary__primary')
+    .find('div[data-testid="total-content"]')
+>>>>>>> template/main
     .should('contain', 'Total')
     .and('contain', total);
 };

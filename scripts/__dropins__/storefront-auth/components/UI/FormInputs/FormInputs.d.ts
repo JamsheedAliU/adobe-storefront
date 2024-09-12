@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'preact';
+<<<<<<< HEAD
 
 export interface FormInputsProps {
     className?: string;
@@ -9,5 +10,9 @@ export interface FormInputsProps {
     onChange?: (event: Event) => void;
     onBlur?: (event: Event) => void;
 }
+=======
+import { FormInputsProps } from '../../../types';
+
+>>>>>>> template/main
 export declare const FormInputs: FunctionComponent<FormInputsProps>;
 //# sourceMappingURL=FormInputs.d.ts.map

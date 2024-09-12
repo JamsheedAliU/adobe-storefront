@@ -9,6 +9,10 @@ export interface AddressFormProps extends HTMLAttributes<HTMLDivElement> {
     autoFill?: boolean;
     headingId: string;
     name: string;
+<<<<<<< HEAD
+=======
+    onCheckoutDataUpdate?: () => Promise<void>;
+>>>>>>> template/main
     preselectedFields?: PreselectedAddressFields;
     saveAddressHandler: (command: SaveAddressCommand) => Promise<typeof cartSignal.value.data>;
 }

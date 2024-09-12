@@ -7,13 +7,21 @@ import { render as authRenderer } from '@dropins/storefront-auth/render.js';
 import { Button } from '@dropins/tools/components.js';
 import { getCookie } from '../../scripts/configs.js';
 
+<<<<<<< HEAD
 export default function decorate(block) {
+=======
+export default async function decorate(block) {
+>>>>>>> template/main
   const isAuthenticated = !!getCookie('auth_dropin_user_token');
 
   if (isAuthenticated) {
     window.location.href = '/customer/account';
   } else {
+<<<<<<< HEAD
     authRenderer.render(SignIn, {
+=======
+    await authRenderer.render(SignIn, {
+>>>>>>> template/main
       enableEmailConfirmation: true,
       routeForgotPassword: () => '/customer/forgotpassword',
       slots: {
@@ -23,8 +31,15 @@ export default function decorate(block) {
           const elem = document.createElement('div');
 
           authRenderer.render(SuccessNotification, {
+<<<<<<< HEAD
             headingText: `Welcome ${userName}!`,
             messageText: 'You have successfully logged in.',
+=======
+            labels: {
+              headingText: `Welcome ${userName}!`,
+              messageText: 'You have successfully logged in.',
+            },
+>>>>>>> template/main
             slots: {
               SuccessNotificationActions: (innerCtx) => {
                 const primaryBtn = document.createElement('div');

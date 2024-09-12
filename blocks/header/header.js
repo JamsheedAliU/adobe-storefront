@@ -1,11 +1,14 @@
 /* eslint-disable import/no-unresolved */
 
+<<<<<<< HEAD
 // Drop-in Providers
 import { render as cartProvider } from '@dropins/storefront-cart/render.js';
 
 // Drop-in Containers
 import MiniCart from '@dropins/storefront-cart/containers/MiniCart.js';
 
+=======
+>>>>>>> template/main
 // Drop-in Tools
 import { events } from '@dropins/tools/event-bus.js';
 
@@ -170,6 +173,7 @@ export default async function decorate(block) {
     cartButton.style.display = 'none';
   }
 
+<<<<<<< HEAD
   async function toggleMiniCart(state) {
     const show = state ?? !minicartPanel.classList.contains('nav-tools-panel--show');
 
@@ -184,6 +188,17 @@ export default async function decorate(block) {
       cartProvider.unmount(minicartPanel);
     }
 
+=======
+  // load nav as fragment
+  const miniCartMeta = getMetadata('mini-cart');
+  const miniCartPath = miniCartMeta ? new URL(miniCartMeta, window.location).pathname : '/mini-cart';
+  loadFragment(miniCartPath).then((miniCartFragment) => {
+    minicartPanel.append(miniCartFragment.firstElementChild);
+  });
+
+  async function toggleMiniCart(state) {
+    const show = state ?? !minicartPanel.classList.contains('nav-tools-panel--show');
+>>>>>>> template/main
     minicartPanel.classList.toggle('nav-tools-panel--show', show);
   }
 

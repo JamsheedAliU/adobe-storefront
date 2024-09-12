@@ -1,8 +1,16 @@
 export interface getAttributesFormItems {
     code: string;
+<<<<<<< HEAD
     default_value: null | string;
     entity_type: string;
     frontend_class: null | string;
+=======
+    sort_order: number;
+    default_value: null | string;
+    entity_type: string;
+    frontend_class: null | string;
+    multiline_count: number;
+>>>>>>> template/main
     frontend_input: string;
     is_required: boolean;
     is_unique: boolean;
